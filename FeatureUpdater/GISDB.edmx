@@ -1,0 +1,286 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="GISModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="rental_data_captured">
+          <Key>
+            <PropertyRef Name="key_id" />
+          </Key>
+          <Property Name="key_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="site_title" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="business_type" Type="nchar" MaxLength="15" Nullable="false" />
+          <Property Name="company_name" Type="nvarchar" MaxLength="250" />
+          <Property Name="address" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="city" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="province" Type="nchar" MaxLength="2" Nullable="false" />
+          <Property Name="postalcode" Type="nchar" MaxLength="7" />
+          <Property Name="num_bedrooms" Type="int" Nullable="false" />
+          <Property Name="rent_amount" Type="numeric" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="incentive" Type="text" />
+          <Property Name="num_bathrooms" Type="numeric" Precision="2" Scale="1" Nullable="false" />
+          <Property Name="square_footage" Type="int" />
+          <Property Name="year_built" Type="int" />
+          <Property Name="availability" Type="date" />
+          <Property Name="num_units" Type="int" />
+          <Property Name="electricity" Type="bit" />
+          <Property Name="electricity_extra" Type="numeric" Precision="10" Scale="2" />
+          <Property Name="heating" Type="bit" />
+          <Property Name="heating_type" Type="nchar" MaxLength="50" />
+          <Property Name="heating_extra" Type="numeric" Precision="10" Scale="2" />
+          <Property Name="hot_water" Type="bit" />
+          <Property Name="hot_water_extra" Type="numeric" Precision="10" Scale="2" />
+          <Property Name="laundry_type" Type="nchar" MaxLength="10" />
+          <Property Name="cable" Type="bit" />
+          <Property Name="cable_extra" Type="numeric" Precision="10" Scale="2" />
+          <Property Name="internet" Type="bit" />
+          <Property Name="internet_extra" Type="numeric" Precision="10" Scale="2" />
+          <Property Name="storage" Type="bit" />
+          <Property Name="storage_extra" Type="numeric" Precision="10" Scale="2" />
+          <Property Name="pets" Type="bit" />
+          <Property Name="pets_extra" Type="numeric" Precision="10" Scale="2" />
+          <Property Name="pets_comments" Type="text" />
+          <Property Name="parking_type" Type="nchar" MaxLength="20" />
+          <Property Name="parking_extra" Type="numeric" Precision="10" Scale="2" />
+          <Property Name="has_elevator" Type="bit" />
+          <Property Name="has_month_to_month_lease" Type="bit" />
+          <Property Name="security_deposit" Type="numeric" Precision="10" Scale="2" />
+          <Property Name="senior_discount" Type="numeric" Precision="10" Scale="2" />
+          <Property Name="website" Type="nvarchar" MaxLength="250" />
+          <Property Name="has_aircon" Type="bit" />
+          <Property Name="has_dishwasher" Type="bit" />
+          <Property Name="has_washer" Type="bit" />
+          <Property Name="has_dryer" Type="bit" />
+          <Property Name="has_stove" Type="bit" />
+          <Property Name="has_fridge" Type="bit" />
+          <Property Name="has_microwave" Type="bit" />
+          <Property Name="has_furniture" Type="bit" />
+          <Property Name="has_common_room" Type="bit" />
+          <Property Name="has_exercise_room" Type="bit" />
+          <Property Name="has_pool" Type="bit" />
+          <Property Name="has_adults_only" Type="bit" />
+          <Property Name="has_den" Type="bit" />
+          <Property Name="has_balcony" Type="bit" />
+          <Property Name="has_smoking" Type="bit" />
+          <Property Name="near_parks" Type="bit" />
+          <Property Name="near_hospital" Type="bit" />
+          <Property Name="near_school" Type="bit" />
+          <Property Name="near_church" Type="bit" />
+          <Property Name="near_fire_department" Type="bit" />
+          <Property Name="near_transit" Type="bit" />
+          <Property Name="near_mall" Type="bit" />
+          <Property Name="near_police" Type="bit" />
+          <Property Name="near_ambulance" Type="bit" />
+          <Property Name="created_by" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="created_timestamp" Type="datetime" Nullable="false" />
+          <Property Name="powered_parking" Type="bit" />
+          <Property Name="parking_stalls_included" Type="int" />
+          <Property Name="secure_parking" Type="bit" />
+          <Property Name="contact_info" Type="text" />
+          <Property Name="longitude" Type="float" />
+          <Property Name="latitude" Type="float" />
+          <Property Name="point" Type="geometry" />
+          <Property Name="sent_to_AGOL" Type="datetime2" Precision="7" />
+        </EntityType>
+        <EntityContainer Name="GISModelStoreContainer">
+          <EntitySet Name="rental_data_captured" EntityType="Self.rental_data_captured" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="GISModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="rental_data_captured">
+          <Key>
+            <PropertyRef Name="key_id" />
+          </Key>
+          <Property Name="key_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="site_title" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="business_type" Type="String" MaxLength="15" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="company_name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="address" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="city" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="province" Type="String" MaxLength="2" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="postalcode" Type="String" MaxLength="7" FixedLength="true" Unicode="true" />
+          <Property Name="num_bedrooms" Type="Int32" Nullable="false" />
+          <Property Name="rent_amount" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="incentive" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="num_bathrooms" Type="Decimal" Precision="2" Scale="1" Nullable="false" />
+          <Property Name="square_footage" Type="Int32" />
+          <Property Name="year_built" Type="Int32" />
+          <Property Name="availability" Type="DateTime" Precision="0" />
+          <Property Name="num_units" Type="Int32" />
+          <Property Name="electricity" Type="Boolean" />
+          <Property Name="electricity_extra" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="heating" Type="Boolean" />
+          <Property Name="heating_type" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="heating_extra" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="hot_water" Type="Boolean" />
+          <Property Name="hot_water_extra" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="laundry_type" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="cable" Type="Boolean" />
+          <Property Name="cable_extra" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="internet" Type="Boolean" />
+          <Property Name="internet_extra" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="storage" Type="Boolean" />
+          <Property Name="storage_extra" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="pets" Type="Boolean" />
+          <Property Name="pets_extra" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="pets_comments" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="parking_type" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="parking_extra" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="has_elevator" Type="Boolean" />
+          <Property Name="has_month_to_month_lease" Type="Boolean" />
+          <Property Name="security_deposit" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="senior_discount" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="website" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="has_aircon" Type="Boolean" />
+          <Property Name="has_dishwasher" Type="Boolean" />
+          <Property Name="has_washer" Type="Boolean" />
+          <Property Name="has_dryer" Type="Boolean" />
+          <Property Name="has_stove" Type="Boolean" />
+          <Property Name="has_fridge" Type="Boolean" />
+          <Property Name="has_microwave" Type="Boolean" />
+          <Property Name="has_furniture" Type="Boolean" />
+          <Property Name="has_common_room" Type="Boolean" />
+          <Property Name="has_exercise_room" Type="Boolean" />
+          <Property Name="has_pool" Type="Boolean" />
+          <Property Name="has_adults_only" Type="Boolean" />
+          <Property Name="has_den" Type="Boolean" />
+          <Property Name="has_balcony" Type="Boolean" />
+          <Property Name="has_smoking" Type="Boolean" />
+          <Property Name="near_parks" Type="Boolean" />
+          <Property Name="near_hospital" Type="Boolean" />
+          <Property Name="near_school" Type="Boolean" />
+          <Property Name="near_church" Type="Boolean" />
+          <Property Name="near_fire_department" Type="Boolean" />
+          <Property Name="near_transit" Type="Boolean" />
+          <Property Name="near_mall" Type="Boolean" />
+          <Property Name="near_police" Type="Boolean" />
+          <Property Name="near_ambulance" Type="Boolean" />
+          <Property Name="created_by" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="created_timestamp" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="powered_parking" Type="Boolean" />
+          <Property Name="parking_stalls_included" Type="Int32" />
+          <Property Name="secure_parking" Type="Boolean" />
+          <Property Name="contact_info" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="longitude" Type="Double" />
+          <Property Name="latitude" Type="Double" />
+          <Property Name="point" Type="Geometry" />
+          <Property Name="sent_to_AGOL" Type="DateTime" Precision="7" />
+        </EntityType>
+        <EntityContainer Name="GISEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="rental_data_captured" EntityType="Self.rental_data_captured" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="GISModelStoreContainer" CdmEntityContainer="GISEntities">
+          <EntitySetMapping Name="rental_data_captured">
+            <EntityTypeMapping TypeName="GISModel.rental_data_captured">
+              <MappingFragment StoreEntitySet="rental_data_captured">
+                <ScalarProperty Name="key_id" ColumnName="key_id" />
+                <ScalarProperty Name="site_title" ColumnName="site_title" />
+                <ScalarProperty Name="business_type" ColumnName="business_type" />
+                <ScalarProperty Name="company_name" ColumnName="company_name" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="city" ColumnName="city" />
+                <ScalarProperty Name="province" ColumnName="province" />
+                <ScalarProperty Name="postalcode" ColumnName="postalcode" />
+                <ScalarProperty Name="num_bedrooms" ColumnName="num_bedrooms" />
+                <ScalarProperty Name="rent_amount" ColumnName="rent_amount" />
+                <ScalarProperty Name="incentive" ColumnName="incentive" />
+                <ScalarProperty Name="num_bathrooms" ColumnName="num_bathrooms" />
+                <ScalarProperty Name="square_footage" ColumnName="square_footage" />
+                <ScalarProperty Name="year_built" ColumnName="year_built" />
+                <ScalarProperty Name="availability" ColumnName="availability" />
+                <ScalarProperty Name="num_units" ColumnName="num_units" />
+                <ScalarProperty Name="electricity" ColumnName="electricity" />
+                <ScalarProperty Name="electricity_extra" ColumnName="electricity_extra" />
+                <ScalarProperty Name="heating" ColumnName="heating" />
+                <ScalarProperty Name="heating_type" ColumnName="heating_type" />
+                <ScalarProperty Name="heating_extra" ColumnName="heating_extra" />
+                <ScalarProperty Name="hot_water" ColumnName="hot_water" />
+                <ScalarProperty Name="hot_water_extra" ColumnName="hot_water_extra" />
+                <ScalarProperty Name="laundry_type" ColumnName="laundry_type" />
+                <ScalarProperty Name="cable" ColumnName="cable" />
+                <ScalarProperty Name="cable_extra" ColumnName="cable_extra" />
+                <ScalarProperty Name="internet" ColumnName="internet" />
+                <ScalarProperty Name="internet_extra" ColumnName="internet_extra" />
+                <ScalarProperty Name="storage" ColumnName="storage" />
+                <ScalarProperty Name="storage_extra" ColumnName="storage_extra" />
+                <ScalarProperty Name="pets" ColumnName="pets" />
+                <ScalarProperty Name="pets_extra" ColumnName="pets_extra" />
+                <ScalarProperty Name="pets_comments" ColumnName="pets_comments" />
+                <ScalarProperty Name="parking_type" ColumnName="parking_type" />
+                <ScalarProperty Name="parking_extra" ColumnName="parking_extra" />
+                <ScalarProperty Name="has_elevator" ColumnName="has_elevator" />
+                <ScalarProperty Name="has_month_to_month_lease" ColumnName="has_month_to_month_lease" />
+                <ScalarProperty Name="security_deposit" ColumnName="security_deposit" />
+                <ScalarProperty Name="senior_discount" ColumnName="senior_discount" />
+                <ScalarProperty Name="website" ColumnName="website" />
+                <ScalarProperty Name="has_aircon" ColumnName="has_aircon" />
+                <ScalarProperty Name="has_dishwasher" ColumnName="has_dishwasher" />
+                <ScalarProperty Name="has_washer" ColumnName="has_washer" />
+                <ScalarProperty Name="has_dryer" ColumnName="has_dryer" />
+                <ScalarProperty Name="has_stove" ColumnName="has_stove" />
+                <ScalarProperty Name="has_fridge" ColumnName="has_fridge" />
+                <ScalarProperty Name="has_microwave" ColumnName="has_microwave" />
+                <ScalarProperty Name="has_furniture" ColumnName="has_furniture" />
+                <ScalarProperty Name="has_common_room" ColumnName="has_common_room" />
+                <ScalarProperty Name="has_exercise_room" ColumnName="has_exercise_room" />
+                <ScalarProperty Name="has_pool" ColumnName="has_pool" />
+                <ScalarProperty Name="has_adults_only" ColumnName="has_adults_only" />
+                <ScalarProperty Name="has_den" ColumnName="has_den" />
+                <ScalarProperty Name="has_balcony" ColumnName="has_balcony" />
+                <ScalarProperty Name="has_smoking" ColumnName="has_smoking" />
+                <ScalarProperty Name="near_parks" ColumnName="near_parks" />
+                <ScalarProperty Name="near_hospital" ColumnName="near_hospital" />
+                <ScalarProperty Name="near_school" ColumnName="near_school" />
+                <ScalarProperty Name="near_church" ColumnName="near_church" />
+                <ScalarProperty Name="near_fire_department" ColumnName="near_fire_department" />
+                <ScalarProperty Name="near_transit" ColumnName="near_transit" />
+                <ScalarProperty Name="near_mall" ColumnName="near_mall" />
+                <ScalarProperty Name="near_police" ColumnName="near_police" />
+                <ScalarProperty Name="near_ambulance" ColumnName="near_ambulance" />
+                <ScalarProperty Name="created_by" ColumnName="created_by" />
+                <ScalarProperty Name="created_timestamp" ColumnName="created_timestamp" />
+                <ScalarProperty Name="powered_parking" ColumnName="powered_parking" />
+                <ScalarProperty Name="parking_stalls_included" ColumnName="parking_stalls_included" />
+                <ScalarProperty Name="secure_parking" ColumnName="secure_parking" />
+                <ScalarProperty Name="contact_info" ColumnName="contact_info" />
+                <ScalarProperty Name="longitude" ColumnName="longitude" />
+                <ScalarProperty Name="latitude" ColumnName="latitude" />
+                <ScalarProperty Name="point" ColumnName="point" />
+                <ScalarProperty Name="sent_to_AGOL" ColumnName="sent_to_AGOL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
