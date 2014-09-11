@@ -36,7 +36,7 @@ Module AGOLUpdater
         End If
 
 
-        Console.ReadLine()
+        'Console.ReadLine()
     End Sub
     Private Sub SendSitesData(siteData As List(Of sites_json))
         Dim deleteURL As String = "http://services.arcgis.com/pgFCLzxld5dtMQ6u/ArcGIS/rest/services/BaseSites/FeatureServer/0/deleteFeatures"
@@ -121,6 +121,10 @@ Module AGOLUpdater
             If Not IsDBNull(dr("VPGLCode")) Then site.attributes.VPGLCode = dr("VPGLCode")
             If Not IsDBNull(dr("Long")) Then site.geometry.x = dr("Long")
             If Not IsDBNull(dr("Lat")) Then site.geometry.y = dr("Lat")
+            If Not IsDBNull(dr("Long")) Then site.attributes.[Long] = dr("Long")
+            If Not IsDBNull(dr("Lat")) Then site.attributes.Lat = dr("Lat")
+            If Not IsDBNull(dr("Long")) Then site.attributes.LongString = dr("Long")
+            If Not IsDBNull(dr("Lat")) Then site.attributes.LatString = dr("Lat")
             site.geometry.spatialReference.wkid = 4326
             retVal.Add(site)
             'iStop += 1

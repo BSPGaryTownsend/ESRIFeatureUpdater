@@ -21,6 +21,10 @@ Public Class Sites
     Public ExcavationDate As Date
     Public OcccupancyDate As Date
     Public MoveInDate As Date
+    Public Lat As Double
+    Public [Long] As Double
+    Public LatString As String
+    Public LongString As String
     Public CHKSUM As String
     'Public FID As Long
 End Class
